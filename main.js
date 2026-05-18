@@ -1,0 +1,62 @@
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}
+
+// Typing Effect for Hero Section
+const typingText = document.getElementById('typingText');
+if (typingText) {
+  const phrases = [
+    "Data Analyst",
+    "Automation Specialist",
+    "ETL Engineer",
+    "Business Intelligence"
+  ];
+  
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let isWaiting = false;
+  
+  function type() {
+    const currentPhrase = phrases[phraseIndex];
+    
+    if (isDeleting) {
+      typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let typeSpeed = isDeleting ? 50 : 100;
+    
+    if (!isDeleting && charIndex === currentPhrase.length) {
+      isWaiting = true;
+      typeSpeed = 2000; // Wait before deleting
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      isWaiting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      typeSpeed = 500; // Wait before typing next word
+    }
+    
+    setTimeout(type, typeSpeed);
+  }
+  
+  // Start the typing effect
+  setTimeout(type, 1000);
+}
+
+// Clone skills for infinite scroll effect
+const skillsContainer = document.querySelector('.skills-container');
+if (skillsContainer) {
+  const clonedSkills = skillsContainer.innerHTML;
+  skillsContainer.innerHTML += clonedSkills + clonedSkills; // Add twice for smooth infinite scroll
+}

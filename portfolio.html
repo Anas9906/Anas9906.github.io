@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Anas Ashraf</title>
+  <meta name="description" content="Data engineering and ETL projects by Anas Ashraf." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AA<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+        <li><a href="bio.html" class="nav-link" id="nav-bio">Bio</a></li>
+        <li><a href="portfolio.html" class="nav-link active" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="pitch.html" class="nav-link" id="nav-pitch">Elevator Pitch</a></li>
+        <li><a href="mailto:anasashraff90@gmail.com" class="nav-cta" id="nav-contact">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-section">
+    <div class="section-header">
+      <h1 class="section-title">Project Portfolio</h1>
+      <p class="section-subtitle">Real enterprise-scale automation projects driving business efficiency.</p>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="streamlit_dashboard_app_preview.png" alt="Streamlit Web Dashboard UI Mockup" style="width: 100%; max-height: 400px; object-fit: cover; border-bottom: 1px solid var(--border-color);" />
+      <div class="project-header">
+        <h2 style="font-size: 1.75rem; color: #fff; margin-bottom: 0.5rem;">Enterprise Scaling: Streamlit Web UI & Remote HR Operations</h2>
+        <p style="color: var(--text-muted);">Led the architectural migration of standalone Python pipelines into a centralized, secure Streamlit web application, collaborating with developer assistance to deploy across a 7,000+ employee organization.</p>
+        <div class="project-tags">
+          <span class="tag">Streamlit</span>
+          <span class="tag">Python</span>
+          <span class="tag">Product Architecture</span>
+          <span class="tag">UI/UX</span>
+          <span class="tag">Secure File I/O</span>
+          <span class="tag">Tailscale VPN</span>
+        </div>
+      </div>
+      <div class="project-body content-block" style="border: none; box-shadow: none; margin: 0;">
+        <h3 style="color: var(--accent-primary); margin-top: 0;">🎯 The Scaling Challenge (From CLI to Web App)</h3>
+        <p>Following the success of my standalone Python ETL scripts, the organization required a way for non-technical HR specialists and regional managers to execute these data workflows autonomously. Running Python scripts from a command-line interface (CLI) and managing local file paths was not scalable across the department.</p>
+        <p>Operating as the Product Owner and Technical Architect, I authored a comprehensive Product Requirements Document (PRD V4.0) and collaborated with developer assistance to wrap the underlying Python engine in a secure, centralized web application.</p>
+        
+        <h3 style="color: var(--accent-primary);">🏗️ Architectural & Security Implementations</h3>
+        <ul style="color: #d1d5db;">
+          <li><strong>Centralized Streamlit Interface (`app.py`):</strong> Designed a dark-themed, intuitive UI featuring sidebar navigation for all 5 core HR workflows. Implemented real-time progress bars and spinners to maintain seamless user experience when processing 50-tab workbooks.</li>
+          <li><strong>In-Memory Data Streaming (Zero PII Footprint):</strong> To adhere to rigorous data privacy policies, all file operations were re-architected to stream strictly in-memory using <code>io.BytesIO</code>. Raw biometric logs and payroll PII are processed entirely in RAM and immediately downloaded by the user, leaving zero footprint on the hosting server.</li>
+          <li><strong>Secure Remote Access via Mesh VPN:</strong> Collaborated on configuring a hybrid deployment model using Tailscale encrypted mesh networking for secure remote execution directly against protected local data directories.</li>
+        </ul>
+        
+        <div style="margin-top: 2rem;">
+          <a href="https://github.com/Anas9906/GIECO-HR-Platform" target="_blank" class="btn-primary">View GitHub Repository</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="python_etl_pipeline_preview.png" alt="Python ETL Data Pipeline Illustration" style="width: 100%; max-height: 400px; object-fit: cover; border-bottom: 1px solid var(--border-color);" />
+      <div class="project-header">
+        <h2 style="font-size: 1.75rem; color: #fff; margin-bottom: 0.5rem;">Python ETL & Data Wrangling Engine: ERP Attendance Pipelines</h2>
+        <p style="color: var(--text-muted);">Engineered standalone Python CLI scripts from scratch to sanitize 50MB+ biometric exports, resolve Odoo database sync crashes, and parse wide-grid timesheets for 7,000+ employees.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Openpyxl</span>
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">ETL Pipelines</span>
+          <span class="tag">Odoo ERP</span>
+        </div>
+      </div>
+      <div class="project-body content-block" style="border: none; box-shadow: none; margin: 0;">
+        <h3 style="color: var(--accent-primary); margin-top: 0;">🎯 Project Overview & Core Mission</h3>
+        <p>As the sole data specialist managing attendance and ERP integrations for over 7,000 construction employees across 50+ active sites, I encountered severe data infrastructure bottlenecks. Every month, raw biometric devices exported messy unformatted Excel logs, while departmental timekeepers submitted 30+ tab "wide-grid" timesheets that crashed Excel on standard laptops.</p>
+        <p>To eliminate hours of manual data entry and prevent recurring Odoo database transaction crashes during upload, I engineered a suite of standalone Python scripts to automate the entire data cleaning and transformation lifecycle.</p>
+        
+        <h3 style="color: var(--accent-primary);">💻 The Python Core Engine (Scripts Developed)</h3>
+        <ul style="color: #d1d5db;">
+          <li><strong>Biometric Attendance Cleaner:</strong> Automated the collapse of hundreds of raw, duplicate daily biometric punches per employee into exact shift start and end times using First-In / Last-Out (FILO) logic.</li>
+          <li><strong>In-Place Database Injection:</strong> Developed an intelligent script that queries Odoo database exports, preserves hidden system record IDs, and injects sanitized hours directly into existing record shells—bypassing hardware sync crash loops entirely.</li>
+          <li><strong>Wide-Grid Timesheet Extractor:</strong> Extracted monthly leave records from 25MB+, 50-tab Excel workbooks. To bypass memory limits, implemented <code>openpyxl</code> in <code>read_only</code> streaming mode. Consolidated consecutive daily leave codes into clean Start/End date ranges matching Odoo’s exact import schema.</li>
+        </ul>
+        
+        <h3 style="color: var(--accent-primary);">📊 Individual Impact & Outcomes</h3>
+        <ul style="color: #d1d5db;">
+          <li><strong>100% Autonomous Execution:</strong> Built and ran these scripts entirely via terminal CLI, reducing monthly data processing time from days to under 30 minutes.</li>
+          <li><strong>Fuzzy Text Matching:</strong> Used Python's <code>difflib</code> and regex to standardize Arabic text variations, eliminating lookup failures.</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-logo"><span class="logo-bracket">&lt;</span>AA<span class="logo-bracket">/&gt;</span></span>
+        <p>Data Analyst & Automation Specialist</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Anas9906" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:anasashraff90@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">© 2026 Anas Ashraf. Built with purpose.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

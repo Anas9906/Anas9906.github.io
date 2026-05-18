@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anas Ashraf — Data Analyst & Automation Specialist</title>
+  <meta name="description" content="Portfolio of Anas Ashraf — Data Analyst & Automation Specialist. Python ETL pipelines, SQL, and enterprise data engineering." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AA<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="bio.html" class="nav-link" id="nav-bio">Bio</a></li>
+        <li><a href="portfolio.html" class="nav-link" id="nav-portfolio">Portfolio</a></li>
+        <li><a href="pitch.html" class="nav-link" id="nav-pitch">Elevator Pitch</a></li>
+        <li><a href="mailto:anasashraff90@gmail.com" class="nav-cta" id="nav-contact">Hire Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Remote Roles
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Anas Ashraf</span>
+      </h1>
+      <p class="hero-tagline">
+        <span class="tagline-typing" id="typingText"></span><span class="cursor">|</span>
+      </p>
+      <p class="hero-description">
+        I build automated data pipelines that turn messy, siloed operational data into clean, executive-level intelligence. Currently engineering ETL systems for <strong>7,000+ employees</strong> across 50+ enterprise sites.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">7,000+</span>
+          <span class="stat-label">Employees Processed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">80%</span>
+          <span class="stat-label">Reporting Time Saved</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Sites Automated</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn-primary" id="hero-portfolio-btn">View My Work</a>
+        <a href="bio.html" class="btn-secondary" id="hero-bio-btn">About Me</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="window-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="window-title">pipeline.py</span>
+        </div>
+        <div class="code-body">
+          <pre class="code-content"><span class="c-keyword">import</span> <span class="c-module">pandas</span> <span class="c-keyword">as</span> pd
+
+<span class="c-comment"># Process 7,000+ employee records</span>
+<span class="c-keyword">def</span> <span class="c-func">clean_biometric_data</span>(raw_file):
+    df = pd.read_excel(raw_file)
+    
+    <span class="c-comment"># Apply FILO logic</span>
+    df = df.groupby([<span class="c-str">'ID'</span>, <span class="c-str">'Date'</span>]).agg(
+        First_In=(<span class="c-str">'Time'</span>, <span class="c-str">'min'</span>),
+        Last_Out=(<span class="c-str">'Time'</span>, <span class="c-str">'max'</span>)
+    ).reset_index()
+
+    <span class="c-comment"># Flag anomalies</span>
+    df[<span class="c-str">'Status'</span>] = df.apply(flag_anomalies, axis=<span class="c-num">1</span>)
+    
+    <span class="c-keyword">return</span> df  <span class="c-comment"># ✅ Clean & ERP-ready</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Strip -->
+  <section class="skills-strip">
+    <div class="skills-container">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag">Pandas</span>
+      <span class="skill-tag">ETL Pipelines</span>
+      <span class="skill-tag">Data Cleaning</span>
+      <span class="skill-tag">Streamlit</span>
+      <span class="skill-tag">Odoo ERP</span>
+      <span class="skill-tag">Openpyxl</span>
+      <span class="skill-tag">PostgreSQL</span>
+      <span class="skill-tag">Data Automation</span>
+    </div>
+  </section>
+
+  <!-- Quick Nav Cards -->
+  <section class="nav-cards" id="explore">
+    <div class="section-container">
+      <h2 class="section-title">Explore My Work</h2>
+      <p class="section-subtitle">A data professional built in the real world — not just classrooms.</p>
+      <div class="cards-grid">
+        <a href="bio.html" class="nav-card" id="card-bio">
+          <div class="card-icon">👤</div>
+          <h3 class="card-title">Professional Bio</h3>
+          <p class="card-desc">My journey from ERP operations to data engineering, and where I'm headed next.</p>
+          <span class="card-link">Read Bio →</span>
+        </a>
+        <a href="portfolio.html" class="nav-card featured" id="card-portfolio">
+          <div class="card-badge">Featured</div>
+          <div class="card-icon">🚀</div>
+          <h3 class="card-title">Project Portfolio</h3>
+          <p class="card-desc">Real enterprise-scale automation projects — Python ETL pipelines, ERP integrations, and web apps.</p>
+          <span class="card-link">View Projects →</span>
+        </a>
+        <a href="pitch.html" class="nav-card" id="card-pitch">
+          <div class="card-icon">🎙️</div>
+          <h3 class="card-title">Elevator Pitch</h3>
+          <p class="card-desc">60 seconds on who I am, what I build, and the unique value I bring to your team.</p>
+          <span class="card-link">Hear My Pitch →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-logo"><span class="logo-bracket">&lt;</span>AA<span class="logo-bracket">/&gt;</span></span>
+        <p>Data Analyst & Automation Specialist</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/Anas9906" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:anasashraff90@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">© 2026 Anas Ashraf. Built with purpose.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
