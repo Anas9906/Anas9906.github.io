@@ -12,10 +12,10 @@ if (hamburger) {
 const typingText = document.getElementById('typingText');
 if (typingText) {
   const phrases = [
+    "ERP Specialist",
     "Data Analyst",
-    "Automation Specialist",
-    "ETL Engineer",
-    "Business Intelligence"
+    "AI Automation Scripter",
+    "Martial Arts Coach"
   ];
   
   let phraseIndex = 0;
