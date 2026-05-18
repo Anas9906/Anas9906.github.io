@@ -15,7 +15,7 @@ if (typingText) {
     "ERP Specialist",
     "Data Analyst",
     "AI Automation Scripter",
-    "Martial Arts Coach"
+    "Martial Arts Practitioner"
   ];
   
   let phraseIndex = 0;
