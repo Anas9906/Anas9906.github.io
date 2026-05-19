@@ -68,7 +68,30 @@ if (contactBtn) {
     e.preventDefault(); // Stop raw mailto link from failing silently
     
     const email = "anasashraff90@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
+    
+    // Resilient copy function that works on file:///
+    function copyText(text) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          textArea.remove();
+          return Promise.resolve();
+        } catch (error) {
+          textArea.remove();
+          return Promise.reject(error);
+        }
+      }
+    }
+
+    copyText(email).then(() => {
       // Create and show a beautiful toast notification
       let toast = document.getElementById('email-toast');
       if (!toast) {
@@ -86,6 +109,9 @@ if (contactBtn) {
       }, 3000);
       
       // Still try to open mailto in background
+      window.location.href = `mailto:${email}`;
+    }).catch((err) => {
+      console.error("Could not copy text: ", err);
       window.location.href = `mailto:${email}`;
     });
   });
