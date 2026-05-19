@@ -60,3 +60,34 @@ if (skillsContainer) {
   const clonedSkills = skillsContainer.innerHTML;
   skillsContainer.innerHTML += clonedSkills + clonedSkills; // Add twice for smooth infinite scroll
 }
+
+// Copy Email & Toast Notification
+const contactBtn = document.getElementById('nav-contact');
+if (contactBtn) {
+  contactBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Stop raw mailto link from failing silently
+    
+    const email = "anasashraff90@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      // Create and show a beautiful toast notification
+      let toast = document.getElementById('email-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'email-toast';
+        toast.className = 'toast-notification';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = "Email copied to clipboard! (anasashraff90@gmail.com)";
+      toast.classList.add('show');
+      
+      // Auto-hide after 3 seconds
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+      
+      // Still try to open mailto in background
+      window.location.href = `mailto:${email}`;
+    });
+  });
+}
+
