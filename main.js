@@ -62,9 +62,9 @@ if (skillsContainer) {
 }
 
 // Copy Email & Toast Notification
-const contactBtn = document.getElementById('nav-contact');
-if (contactBtn) {
-  contactBtn.addEventListener('click', (e) => {
+const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+mailtoLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
     e.preventDefault(); // Stop raw mailto link from failing silently
     
     const email = "anasashraff90@gmail.com";
@@ -115,5 +115,5 @@ if (contactBtn) {
       window.location.href = `mailto:${email}`;
     });
   });
-}
+});
 
